@@ -13,7 +13,7 @@ The Email Report Action Plugin allows you to send the PDF version of a dashboard
 | Author | Laurent Izac (Laurent.Izac@compuware.com)
 | dynaTrace Versions | >= 5.5
 | License | [dynaTrace BSD](dynaTraceBSD.txt)
-| Support | [Not Supported](https://community/display/DL/Support+Levels)
+| Support | [Not Supported](https://community.compuwareapm.com/community/display/DL/Support+Levels)
 | Known Problems |
 | Release History |2012-11-05 Initial Release
 || 2013-09-03 : 1.0.2 fixed SMTP port issue
