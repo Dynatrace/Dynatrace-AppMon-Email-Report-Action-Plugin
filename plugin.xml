@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 4.2.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugins.mailReport" name="Mail Report Task/Action Plugin">
+    <information>
+      <category value="" />
+      <displayname value="Mail Report Task/Action Plugin" />
+      <description value="sample plugin intended to be used as demo for sending email with PDF report attached. &#xD;&#xA;NB: PDF report will be retrieved from Dashboard through REST interface.&#xD;&#xA;" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="dthost" label="dynaTrace Server" type="string" description="name or IP address of your dT server (will be used as target for REST call)" default="localhost" multiline="false" />
+      <property key="dtport" label="dynaTrace server REST port" type="long" description="HTTP port of your dT server (will be used as target for REST call)" default="8020" />
+      <property key="dtuser" label="dynaTrace Server user" type="string" description="user id  to connect to your dT server (will be used in REST call)" default="admin" multiline="false" />
+      <property key="dtpwd" label="dynaTrace Server password" type="password" description="user password  to connect to your dT server (will be used in REST call)" default="admin" />
+      <property key="host" label="SMTP Host" type="string" description="SMTP host name or IP address to use for routing e-mails&#xD;&#xA;NB: should ideally automatically get value from dT server configuration but could not find a suitable API to do so..." default="" multiline="false" />
+      <property key="port" label="SMTP Port" type="long" description="SMTP host port to use for routing e-mails&#xD;&#xA;NB: should ideally automatically get value from dT server configuration but could not find a suitable API to do so..." default="25" />
+      <property key="from" label="Sender" type="string" description="e-mail address of sender" default="" multiline="false" />
+      <property key="to" label="Recipient(s)" type="string" description="e-mail address of  recipients (at least one is mandatory; separate multiple addresses with semi-colons)." default="" multiline="false" />
+      <property key="subject" label="Title" type="string" description="e-mail subject (can be left empty)" default="" multiline="false" />
+      <property key="text" label="Text" type="string" description="e-mail content (can be left empty)" default="" multiline="false" />
+      <property key="dashboard" label="Dashboard name" type="string" description="name of the dashboard to generate the PDF report from.&#xD;&#xA;" default="" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.task" id="com.dynatrace.diagnostics.plugins.mailReport.task" name="Mail Report  Plugin Task">
+    <plugin configid="com.dynatrace.diagnostics.plugins.mailReport" class="com.dynatrace.diagnostics.plugins.mailReport.MailReportTask" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.action" id="com.dynatrace.diagnostics.plugins.mailReport.action" name="Mail Report Plugin Action">
+    <plugin configid="com.dynatrace.diagnostics.plugins.mailReport" class="com.dynatrace.diagnostics.plugins.mailReport.MailReportAction" />
+  </extension>
+</plugin>
+

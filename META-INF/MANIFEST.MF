@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: laurent.izac@compuware.com
+Bundle-ClassPath: .,lib/mailapi.jar,lib/smtp.jar
+Bundle-Version: 1.0.2
+Bundle-Name: Mail Report Task/Action Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.dynatrace.diagnostics.plugins.mailReport;sing
+ leton:=true
+
